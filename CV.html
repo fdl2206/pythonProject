@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Interaktif - Muhammad Fadil Tallei</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        .section {
+            margin-bottom: 20px;
+            display: none; /* Bagian tersembunyi default */
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Curriculum Vitae</h1>
+    <h2>Muhammad Fadil Tallei</h2>
+    <img src="Foto CV.jpg" alt="Foto Muhammad Fadil Tallei">
+
+    <!-- Tombol untuk Navigasi -->
+    <div>
+        <button onclick="showSection('contact')">Kontak</button>
+        <button onclick="showSection('profile')">Profil</button>
+        <button onclick="showSection('education')">Pendidikan</button>
+        <button onclick="showSection('skills')">Skills</button>
+        <button onclick="showSection('achievements')">Prestasi</button>
+        <button onclick="showSection('hobbies')">Hobi</button>
+    </div>
+
+    <!-- Bagian Konten -->
+    <div id="contact" class="section">
+        <h3>Kontak</h3>
+        <p>Email: muhammadfadil.tallei@gmail.com</p>
+        <p>Telegram: @mft2206</p>
+        <p>Telepon: +62 857 9700 2736</p>
+        <p>Alamat: Jalan Burangrang no. 8, Bandung</p>
+    </div>
+
+    <div id="profile" class="section">
+        <h3>Profil</h3>
+        <p>Saya Muhammad Fadil Tallei, alumni SMA BPI 1 Bandung.
+            Saya memiliki ketertarikan dalam pengembangan game
+            oleh karena itu saya memilih untuk masuk Prodi Rekayasa
+            Perangkat Lunak agar dapat mengasah kemampuan saya
+            dalam coding dan membuat Perangkat Lunak yang baik.</p>
+    </div>
+
+    <div id="education" class="section">
+        <h3>Pendidikan</h3>
+        <p>SMA BPI 1 Bandung, Ilmu Pengetahuan Alam (IPA) (2021–2024)</p>
+    </div>
+
+    <div id="skills" class="section">
+        <h3>Skills</h3>
+        <ul>
+            <li>Kreativitas</li>
+            <li>Komunikasi</li>
+            <li>Kerjasama</li>
+            <li>Pemikiran Kritis</li>
+            <li>Manajemen Waktu</li>
+        </ul>
+    </div>
+
+    <div id="achievements" class="section">
+        <h3>Prestasi</h3>
+        <p>20 TIM TERBAIK - Kita Harus Belajar STEM Tahun 2023 (Basic, Provinsi Jawa Barat)</p>
+        <p>THIRD PLACE - ASEAN Robotic Day 2023</p>
+    </div>
+
+    <div id="hobbies" class="section">
+        <h3>Hobi</h3>
+        <p>Programming dan olahraga untuk menjaga kebugaran tubuh.</p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua bagian
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Tampilkan bagian yang dipilih
+            const sectionToShow = document.getElementById(sectionId);
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

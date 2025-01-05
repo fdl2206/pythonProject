@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .full-height {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- Baris pertama: A, B, C -->
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td rowspan="6" class="full-height">C</td>
+            <td rowspan="6" class="full-height">OIIA</td>
+        </tr>
+        <!-- Baris kedua: D, E -->
+        <tr>
+            <td>D</td>
+            <td>E</td>
+        </tr>
+        <!-- Baris ketiga: One, Two, Three -->
+        <tr>
+            <td colspan="2" rowspan="2">
+                <ul>
+                    <li>One</li>
+                    <li>Two</li>
+                    <li>Three</li>
+                </ul>
+            </td>
+        </tr>
+        <!-- Baris keempat: X, Y -->
+        <tr>
+            <td>X</td>
+            <td>Y</td>
+        </tr>
+        <!-- Baris kelima: Satu, Dua, Tiga -->
+        <tr>
+            <td colspan="2" rowspan="2">
+                <ol type="i">
+                    <li>Satu</li>
+                    <li>Dua</li>
+                    <li>Tiga</li>
+                </ol>
+            </td>
+            <td>Z</td>
+        </tr>
+    </table>
+</body>
+</html>

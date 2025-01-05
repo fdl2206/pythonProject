@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Shazam API</title>
+</head>
+<body>
+    <h1>Get Latest Release from Shazam API</h1>
+    <form id="apiForm">
+        <label for="artistId">Enter Artist ID:</label>
+        <input type="text" id="artistId" name="artistId" required placeholder="73406786">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="output">
+        <p>Response will appear here...</p>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById("apiForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Get the artist ID from the form
+            const artistId = document.getElementById("artistId").value;
+
+            // Define API URL and parameters
+            const url = `https://shazam64.p.rapidapi.com/?about=artist&id=1072127755`;
+
+            // Define headers (replace 'YOUR_API_KEY' with your actual key)
+            const headers = {
+                "x-rapidapi-host": "shazam64.p.rapidapi.com",
+                "x-rapidapi-key": "4015e60eb6mshebfb389ab0d868bp125b0ajsn64d8369bf9a0"
+            };
+
+            // Call the API using fetch
+            fetch(url, { headers })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Display API response in the output div
+                    const output = document.getElementById("output");
+                    output.innerHTML = `
+                        <h2>Latest Release</h2>
+                        <p>${JSON.stringify(data, null, 2)}</p>
+                    `;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("output").innerHTML = `
+                        <p>Error: ${error.message}</p>
+                    `;
+                });
+        });
+    </script>
+</body>
+</html>
